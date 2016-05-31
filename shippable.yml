@@ -19,7 +19,8 @@ build:
     - echo "this is master branch with preci"
 
   post_ci:
-    - ls -a
+    - docker info
+    - docker version
     - pwd
   
   cache: true
