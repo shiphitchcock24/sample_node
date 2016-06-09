@@ -58,6 +58,6 @@ integrations:
             - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
             - FOO=bar
             - FIZZ=buzz
-          on_success: never
+          on_success: always
           on_start: never
           on_failure: always
