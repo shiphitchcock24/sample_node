@@ -14,11 +14,6 @@ build:
 
   ci:
     - echo "Hello, World with changes to branch with changes to readme"
-    - sudo docker ps -a
-    - sudo docker --version
-    - sudo pip install docker-compose
-    - sudo docker-compose --version
-    - sleep 5m
 
 
 
