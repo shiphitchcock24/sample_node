@@ -48,8 +48,8 @@ integrations:
             - title=Failure - $REPO_FULL_NAME - $BUILD_NUMBER
             - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) failed for $COMPARE_URL
           on_success: always
-          on_start: always
-          on_failure: always
+          on_start: never
+          on_failure: never
           
         - integrationName: ship-wh
           type: webhook
@@ -59,6 +59,6 @@ integrations:
             - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
             - FOO=bar
             - FIZZ=buzz
-          on_success: always
+          on_success: never
           on_start: always
-          on_failure: always
+          on_failure: never
