@@ -59,3 +59,4 @@ integrations:
           on_success: never
           on_start: always
           on_failure: never
+          on_pull_request: always
