@@ -32,9 +32,9 @@ integrations:
             - hosts=["testing"]
             - commit=$commit
             - buildLink=["$SHIPPABLE_BUILD_URL"]
-            - success=false
-            - message="build started"
-            - started=true
+            - success=true
+            - message="build success"
+            - started=false
           on_success: always
           on_start: never
           on_failure: never
