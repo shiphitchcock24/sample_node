@@ -26,36 +26,28 @@ build:
 integrations:
   
   notifications:
-        - integrationName: email
-          type: email
-          recipients:
-            - chandrakanth@shippable.com
-          on_success: always
-          on_failure: always 
-          on_start: always
-          
-        - integrationName: ship-slack
-          type: slack
-          recipients:
-            - "#slacktestck"
-          on_success: always
-          on_start: always
-          on_failure: always 
-          
-        - integrationName: test-wh-fail
+        - integrationName: ON_START_WEBHOOK
           type: webhook
           payload:
-            - title=Failure - $REPO_FULL_NAME - $BUILD_NUMBER
-            - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) failed for $COMPARE_URL
+            - hosts=["testing"]
+            - commit=$commit
+            - buildLink=["$SHIPPABLE_BUILD_URL"]
+            - success=false
+            - message="build started"
+            - started=true
           on_success: always
           on_start: never
           on_failure: never
           
-        - integrationName: ship-wh
+        - integrationName: ON_SUCCESS_WEBHOOK
           type: webhook
           payload:
-            - title=this is from ship-wh webhook - $REPO_FULL_NAME - $BUILD_NUMBER
-            - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) started for $COMPARE_URL
+            - hosts=["testing"]
+            - commit=$commit
+            - buildLink=["$SHIPPABLE_BUILD_URL"]
+            - success=false
+            - started=true
+            - message="build started"
           on_success: never
           on_start: always
           on_failure: never
