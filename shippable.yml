@@ -26,7 +26,7 @@ build:
 integrations:
   
   notifications:
-        - integrationName: ON_START_WEBHOOK
+        - integrationName: ON_SUCCESS_WEBHOOK
           type: webhook
           payload:
             hosts: test"ing
