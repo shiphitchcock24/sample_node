@@ -29,9 +29,12 @@ integrations:
         - integrationName: ON_START_WEBHOOK
           type: webhook
           payload:
-            hosts: ["testing"]
+            hosts: "testing"
+            notification:
+              - "on_success"
             commit: $SHIPPABLE_COMMIT_RANGE
-            buildLink: ["$BUILD_URL"]
+            buildLink:
+              - "$BUILD_URL"
             success: true
             message: "build success"
             started: false
@@ -42,9 +45,12 @@ integrations:
         - integrationName: ON_SUCCESS_WEBHOOK
           type: webhook
           payload:
-            hosts: ["testing"]
+            hosts: "testing"
+            notification:
+              - "on_start"
             commit: $SHIPPABLE_COMMIT_RANGE
-            buildLink: ["BUILD_URL"]
+            buildLink: 
+              - "BUILD_URL"
             success: false
             started: true
             message: "build started"
