@@ -29,7 +29,7 @@ integrations:
         - integrationName: ON_START_WEBHOOK
           type: webhook
           payload:
-            hosts: "testing"
+            hosts: test"ing
             notification:
               - "on_success"
             commit: $SHIPPABLE_COMMIT_RANGE
