@@ -50,7 +50,7 @@ integrations:
               - "on_start"
             commit: $SHIPPABLE_COMMIT_RANGE
             buildLink: 
-              - "BUILD_URL"
+              - "$BUILD_URL"
             success: false
             started: true
             message: "build started"
