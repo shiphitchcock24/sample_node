@@ -30,8 +30,17 @@ build:
   on_failure:
     - sudo mongo test --eval "db.dropDatabase()"
 
-  cache: true
-  
-  cache_dir_list: 
-    - $SHIPPABLE_BUILD_DIR/node_modules
+integrations:
+  notifications:
+    - integrationName: 
+      type: slack
+      recipients:
+        - "#slacktestck"
+      branches:
+        only:
+          - master
+      on_success: always
+      on_start: always
+      on_pull_request: always
+      on_failure: always
 
