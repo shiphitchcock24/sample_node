@@ -33,7 +33,7 @@ build:
 integrations:
   notifications:
     - integrationName: "ship-slack"
-      type: slack
+      type: Slack
       recipients:
         - "#slacktestck"
       branches:
